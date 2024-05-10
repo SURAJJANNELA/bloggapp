@@ -1,0 +1,21 @@
+.navv{
+    padding: 0.5rem;
+    background-color: #ffd700;
+    height: 4rem;
+}
+.image{
+    width: 3rem;
+}
+.att{
+    padding-right: 2.5rem;
+}
+.lnk{
+    text-decoration: none;
+    color: black;
+}
+.lnk.active{
+    color:white;
+}
+.lnk:hover{
+    color:#c0c0c0;
+}

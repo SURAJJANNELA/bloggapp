@@ -1,0 +1,100 @@
+//Get all authors
+GET http://localhost:4000/author-api/author
+
+
+###
+// get author details by author name
+GET http://localhost:4000/author-api/author/Guna
+
+###
+//Adding new author
+POST http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"Vishesh",
+    "password":"Vishesh",
+    "email":"Vishesh@mail.com"
+}
+
+###
+//login
+POST http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "username":"Vishesh",
+    "password":"Vishesh"
+}
+
+###
+//update author
+PUT http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"Guna",
+    "password":"Guna",
+    "email":"Guna@mail.com"
+}
+
+###
+//Post new article
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Java Script",
+    "category":"Functions",
+    "content":"Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it.",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"Vishesh",
+    "comments":[],
+    "status":true
+}
+
+###
+//modify article
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId": "1709875309",
+    "title":"Java Script",
+    "category":"Functions",
+    "content":"Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value.",
+    "dateOfCreation":"2024-03-08T05:21:49.326Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"Vishesh",
+    "comments":[],
+    "status":true
+}
+
+###
+//soft delete an article by articleId
+PUT http://localhost:4000/author-api/articles/1709875309
+Content-Type: application/json
+
+{
+    "articleId": "1709875309",
+    "title":"Java Script",
+    "category":"Functions",
+    "content":"Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value.",
+    "dateOfCreation":"2024-03-08T05:21:49.326Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"Vishesh",
+    "comments":[],
+    "status":true
+}
+
+###
+
+GET http://localhost:4000/author-api/articles/Vishesh
+
+
+###
+DELETE http://localhost:4000/author-api/author/1

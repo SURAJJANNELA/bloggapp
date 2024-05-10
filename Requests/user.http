@@ -1,0 +1,57 @@
+//Get all users
+GET http://localhost:4000/user-api/user
+
+
+###
+//Add new users
+POST http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"Vishesh",
+    "password":"Vishesh",
+    "email":"Vishesh@mail.com"
+}
+
+###
+//login
+POST http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "username":"Vishesh",
+    "password":"Vishesh"
+}
+
+###
+//Update user
+PUT http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"Guna",
+    "password":"Guna",
+    "email":"Guna@mail.com"
+}
+
+###
+
+//get articles
+GET http://localhost:4000/user-api/articles
+
+###
+//write comments
+POST http://localhost:4000/user-api/comment/1709875309
+Content-Type: application/json
+
+{
+    "username":"Guna",
+    "comment":"Valuable information"
+}
+
+
+###
+
+DELETE http://localhost:4000/user-api/user/1
